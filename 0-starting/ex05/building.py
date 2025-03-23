@@ -22,6 +22,11 @@ def text_lover(text: str):
     print(f"{digit_count} digits")
 
 def main():
+    """Checks the entered argument
+
+    Raises:
+        AssertionError: You cannot enter more than 1 argument!
+    """
     try:
         if len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")
@@ -33,8 +38,6 @@ def main():
             text_lover(sys.argv[1])
     except AssertionError as e:
         print(f"AssertionError: {e}")
-    except EOFError:
-        pass
 
 if __name__ == "__main__":
     main()
